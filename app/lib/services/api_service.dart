@@ -2,12 +2,12 @@ import 'dart:async';
 import 'dart:io';
 import 'package:flutter/foundation.dart';
 import 'package:dio/dio.dart';
+import '../config/app_config.dart';
 import '../utils/dio_client.dart';
 
 /// Service để kiểm tra kết nối server
 class ApiService {
-  static const String baseUrl =
-      'https://pseudoeconomical-loise-interpolable.ngrok-free.dev/api/v1';
+  static String get baseUrl => AppConfig.baseUrl;
   static final Dio _defaultDio = DioClient.getDio(null);
 
   final Dio _dio;

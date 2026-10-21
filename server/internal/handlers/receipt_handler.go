@@ -4,7 +4,7 @@ import (
 	"io"
 	"net/http"
 
-	"github.com/2impaoo-it/moneypod_app/server/internal/services"
+	"github.com/xbossPhat/moneypod_app/server/internal/services"
 	"github.com/gin-gonic/gin"
 )
 
@@ -29,6 +29,13 @@ func NewReceiptHandler(service *services.ReceiptService) *ReceiptHandler {
 // @Failure      500  {object}  map[string]interface{} "Lỗi xử lý AI"
 // @Router       /receipts/scan [post]
 func (h *ReceiptHandler) Scan(c *gin.Context) {
+	if h.service == nil {
+		c.JSON(http.StatusServiceUnavailable, gin.H{
+			"error": "Dịch vụ AI quét hóa đơn (Gemini) chưa được cấu hình",
+		})
+		return
+	}
+
 	// 1. Nhận file từ Request (Key là "images" - hỗ trợ multi-file từ Flutter)
 	file, _, err := c.Request.FormFile("images")
 	if err != nil {

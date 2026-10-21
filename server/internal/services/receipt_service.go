@@ -7,7 +7,7 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/2impaoo-it/moneypod_app/server/internal/models"
+	"github.com/xbossPhat/moneypod_app/server/internal/models"
 	"github.com/google/generative-ai-go/genai"
 	"google.golang.org/api/option"
 )

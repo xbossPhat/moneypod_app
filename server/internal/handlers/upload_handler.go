@@ -3,7 +3,7 @@ package handlers
 import (
 	"net/http"
 
-	"github.com/2impaoo-it/moneypod_app/server/internal/services"
+	"github.com/xbossPhat/moneypod_app/server/internal/services"
 	"github.com/gin-gonic/gin"
 )
 
@@ -33,6 +33,13 @@ func NewUploadHandler(storageService *services.StorageService) *UploadHandler {
 // @Failure      500  {object}  map[string]interface{} "Lỗi upload"
 // @Router       /upload [post]
 func (h *UploadHandler) UploadImage(c *gin.Context) {
+	if h.storageService == nil {
+		c.JSON(http.StatusServiceUnavailable, gin.H{
+			"error": "Dịch vụ upload ảnh (Cloudinary) chưa được cấu hình",
+		})
+		return
+	}
+
 	// 1. Nhận file từ request (Form Data)
 	// Lưu ý: Key gửi lên phải là "file" (hoặc bạn đổi thành "image" tùy ý, nhưng phải thống nhất với Flutter)
 	file, header, err := c.Request.FormFile("file")

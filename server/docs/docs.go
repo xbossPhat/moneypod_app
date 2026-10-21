@@ -11,8 +11,8 @@ const docTemplate = `{
         "title": "{{.Title}}",
         "termsOfService": "http://swagger.io/terms/",
         "contact": {
-            "name": "Tiger Nau (Project Manager)",
-            "email": "support@moneypod.com"
+            "name": "ThanhPhat",
+            "email": "phatta@xboss.com"
         },
         "license": {
             "name": "Apache 2.0",

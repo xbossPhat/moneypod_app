@@ -5,10 +5,10 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/2impaoo-it/moneypod_app/server/internal/models"
-	"github.com/2impaoo-it/moneypod_app/server/internal/repositories"
-	"github.com/2impaoo-it/moneypod_app/server/pkg/constants"
-	"github.com/2impaoo-it/moneypod_app/server/pkg/utils"
+	"github.com/xbossPhat/moneypod_app/server/internal/models"
+	"github.com/xbossPhat/moneypod_app/server/internal/repositories"
+	"github.com/xbossPhat/moneypod_app/server/pkg/constants"
+	"github.com/xbossPhat/moneypod_app/server/pkg/utils"
 	"github.com/google/uuid"
 	"gorm.io/gorm"
 )

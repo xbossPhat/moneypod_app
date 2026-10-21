@@ -3,8 +3,8 @@ package handlers
 import (
 	"net/http"
 
-	"github.com/2impaoo-it/moneypod_app/server/internal/services"
-	"github.com/2impaoo-it/moneypod_app/server/internal/utils"
+	"github.com/xbossPhat/moneypod_app/server/internal/services"
+	"github.com/xbossPhat/moneypod_app/server/internal/utils"
 	"github.com/gin-gonic/gin"
 	"github.com/google/uuid"
 )

@@ -3,8 +3,8 @@ package handlers
 import (
 	"time"
 
-	"github.com/2impaoo-it/moneypod_app/server/internal/models"
-	"github.com/2impaoo-it/moneypod_app/server/internal/services"
+	"github.com/xbossPhat/moneypod_app/server/internal/models"
+	"github.com/xbossPhat/moneypod_app/server/internal/services"
 	"github.com/gin-gonic/gin"
 	"github.com/google/uuid"
 )

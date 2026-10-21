@@ -242,6 +242,24 @@ class _SplashScreenState extends State<SplashScreen>
                             ),
                           ),
                         ),
+                        const SizedBox(height: 10),
+                        TextButton(
+                          onPressed: () {
+                            Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const LoginScreen(),
+                              ),
+                            );
+                          },
+                          child: const Text(
+                            'Bỏ qua & Vào màn hình Đăng nhập',
+                            style: TextStyle(
+                              fontSize: 13,
+                              color: AppColors.primary,
+                            ),
+                          ),
+                        ),
                       ],
                     ),
                   ),

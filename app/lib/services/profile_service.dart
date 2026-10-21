@@ -2,6 +2,7 @@ import 'dart:io';
 import 'package:flutter/foundation.dart';
 import 'dart:async';
 import 'package:dio/dio.dart';
+import 'package:moneypod/config/app_config.dart';
 import 'package:moneypod/models/profile.dart';
 import 'package:moneypod/repositories/profile_repository.dart';
 
@@ -15,8 +16,7 @@ class ProfileService {
           dio ??
           Dio(
             BaseOptions(
-              baseUrl:
-                  'https://pseudoeconomical-loise-interpolable.ngrok-free.dev/api/v1',
+              baseUrl: AppConfig.baseUrl,
               headers: {'ngrok-skip-browser-warning': 'true'},
             ),
           );

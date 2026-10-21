@@ -4,7 +4,7 @@ import (
 	"net/http"
 	"strconv"
 
-	"github.com/2impaoo-it/moneypod_app/server/internal/repositories"
+	"github.com/xbossPhat/moneypod_app/server/internal/repositories"
 	"github.com/gin-gonic/gin"
 	"github.com/google/uuid"
 )

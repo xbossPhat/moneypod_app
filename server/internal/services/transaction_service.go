@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/2impaoo-it/moneypod_app/server/internal/models"
-	"github.com/2impaoo-it/moneypod_app/server/internal/repositories"
-	"github.com/2impaoo-it/moneypod_app/server/pkg/constants"
+	"github.com/xbossPhat/moneypod_app/server/internal/models"
+	"github.com/xbossPhat/moneypod_app/server/internal/repositories"
+	"github.com/xbossPhat/moneypod_app/server/pkg/constants"
 	"github.com/google/uuid"
 	"gorm.io/gorm"
 )

@@ -1157,11 +1157,10 @@ This project is developed for educational purposes at **HUTECH University**.
 
 ## 👨‍💻 Author & Contact
 
-**NgocBao** - Backend Developer
+**ThanhPhat** - Full-stack & Mobile Developer
 
-- 📧 Email: [baoga271104@gmail.com](mailto:baoga271104@gmail.com)
-- 💼 LinkedIn: [linkedin.com/in/2impaoo/](https://www.linkedin.com/in/2impaoo/)
-- 🐙 GitHub: [@2impaoo-it](https://github.com/2impaoo-it)
+- 📧 Email: [phatta@xboss.com](mailto:phatta@xboss.com)
+- 🐙 GitHub: [@xbossPhat](https://github.com/xbossPhat)
 
 **HUTECH University** - Software Engineering Program
 
@@ -1196,7 +1195,7 @@ This project is developed for educational purposes at **HUTECH University**.
   
 ### 🌟 If you find this project helpful, please give it a star! 🌟
 
-**Built with ❤️ by NgocBaoTeam**
+**Built with ❤️ by ThanhPhat**
 
 _Keywords: Golang, PostgreSQL, REST API, Clean Architecture, Flutter, Firebase, Backend Development, Expense Splitting Algorithm, Database Optimization, Async Processing_
 

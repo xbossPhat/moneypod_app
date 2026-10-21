@@ -3,7 +3,7 @@ package services
 import (
 	"errors"
 
-	"github.com/2impaoo-it/moneypod_app/server/internal/models"
+	"github.com/xbossPhat/moneypod_app/server/internal/models"
 	"github.com/google/uuid"
 	"gorm.io/gorm"
 )

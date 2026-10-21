@@ -1,10 +1,10 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
+import '../config/app_config.dart';
 import '../utils/dio_client.dart';
 
 class AuthService {
-  static const String baseUrl =
-      'https://pseudoeconomical-loise-interpolable.ngrok-free.dev/api/v1';
+  static String get baseUrl => AppConfig.baseUrl;
 
   final FlutterSecureStorage storage;
   late final Dio _dio;

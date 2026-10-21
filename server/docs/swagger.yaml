@@ -325,8 +325,8 @@ definitions:
 host: localhost:8080
 info:
   contact:
-    email: support@moneypod.com
-    name: Tiger Nau (Project Manager)
+    email: phatta@xboss.com
+    name: ThanhPhat
   description: API Server for MoneyPod Application (Expense Tracker & Savings).
   license:
     name: Apache 2.0

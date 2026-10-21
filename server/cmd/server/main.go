@@ -3,13 +3,13 @@ package main
 import (
 	"log"
 
-	_ "github.com/2impaoo-it/moneypod_app/server/docs"
-	"github.com/2impaoo-it/moneypod_app/server/internal/config"
-	"github.com/2impaoo-it/moneypod_app/server/internal/handlers"
-	"github.com/2impaoo-it/moneypod_app/server/internal/middleware"
-	"github.com/2impaoo-it/moneypod_app/server/internal/repositories"
-	"github.com/2impaoo-it/moneypod_app/server/internal/services"
-	"github.com/2impaoo-it/moneypod_app/server/pkg/db"
+	_ "github.com/xbossPhat/moneypod_app/server/docs"
+	"github.com/xbossPhat/moneypod_app/server/internal/config"
+	"github.com/xbossPhat/moneypod_app/server/internal/handlers"
+	"github.com/xbossPhat/moneypod_app/server/internal/middleware"
+	"github.com/xbossPhat/moneypod_app/server/internal/repositories"
+	"github.com/xbossPhat/moneypod_app/server/internal/services"
+	"github.com/xbossPhat/moneypod_app/server/pkg/db"
 	"github.com/gin-gonic/gin"
 	swaggerFiles "github.com/swaggo/files"
 	ginSwagger "github.com/swaggo/gin-swagger"
@@ -20,8 +20,8 @@ import (
 // @description     API Server for MoneyPod Application (Expense Tracker & Savings).
 // @termsOfService  http://swagger.io/terms/
 
-// @contact.name    Tiger Nau (Project Manager)
-// @contact.email   support@moneypod.com
+// @contact.name    ThanhPhat
+// @contact.email   phatta@xboss.com
 
 // @license.name    Apache 2.0
 // @license.url     http://www.apache.org/licenses/LICENSE-2.0.html
@@ -61,13 +61,24 @@ func main() {
 	// ✅ Cloudinary Service
 	storageService, err := services.NewStorageService()
 	if err != nil {
-		log.Fatal("❌ Lỗi kết nối Cloudinary:", err)
+		log.Println("⚠️ Cảnh báo: Chưa cấu hình Cloudinary (Tính năng upload ảnh tạm thời tắt):", err)
+		storageService = nil
+	} else {
+		log.Println("✅ Đã kết nối Cloudinary Storage Service!")
 	}
 
 	// ✅ Gemini AI Service
-	receiptService, err := services.NewReceiptService(config.AppConfig.GeminiAPIKey)
-	if err != nil {
-		log.Fatal("❌ Lỗi khởi tạo Gemini AI:", err)
+	var receiptService *services.ReceiptService
+	if config.AppConfig.GeminiAPIKey != "" {
+		receiptService, err = services.NewReceiptService(config.AppConfig.GeminiAPIKey)
+		if err != nil {
+			log.Println("⚠️ Cảnh báo: Lỗi khởi tạo Gemini AI:", err)
+			receiptService = nil
+		} else {
+			log.Println("✅ Đã khởi tạo Gemini AI Service!")
+		}
+	} else {
+		log.Println("⚠️ Cảnh báo: Không có GEMINI_API_KEY - Tính năng quét hóa đơn tạm thời tắt.")
 	}
 
 	// ✅ Insight Service (sử dụng Gemini)

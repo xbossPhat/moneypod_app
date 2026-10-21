@@ -1,4 +1,4 @@
-module github.com/2impaoo-it/moneypod_app/server
+module github.com/xbossPhat/moneypod_app/server
 
 go 1.25.5
 

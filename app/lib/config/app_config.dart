@@ -17,8 +17,7 @@ class AppConfig {
 
   // Base URLs cho từng environment
   static const Map<String, String> _baseUrls = {
-    'development':
-        'https://pseudoeconomical-loise-interpolable.ngrok-free.dev/api/v1',
+    'development': 'http://10.0.2.2:8080/api/v1',
     'staging': 'https://staging-api.moneypod.com/api/v1',
     'production': 'https://api.moneypod.com/api/v1',
   };
