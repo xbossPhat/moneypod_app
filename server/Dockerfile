@@ -1,5 +1,5 @@
 # Build Stage
-FROM golang:1.25-alpine AS builder
+FROM golang:alpine AS builder
 WORKDIR /app
 
 # Copy file module trước để tận dụng cache

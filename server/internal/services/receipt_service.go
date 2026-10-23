@@ -5,6 +5,7 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
+	"os"
 	"strings"
 
 	"github.com/xbossPhat/moneypod_app/server/internal/models"
@@ -27,7 +28,11 @@ func NewReceiptService(apiKey string) (*ReceiptService, error) {
 
 func (s *ReceiptService) AnalyzeReceipt(imageData []byte) (*models.ReceiptData, error) {
 	ctx := context.Background()
-	model := s.client.GenerativeModel("gemini-2.5-flash")
+	modelName := os.Getenv("GEMINI_MODEL")
+	if modelName == "" {
+		modelName = "gemini-3.8-flash"
+	}
+	model := s.client.GenerativeModel(modelName)
 
 	// Cấu hình để Gemini trả về JSON chuẩn
 	model.ResponseMIMEType = "application/json"

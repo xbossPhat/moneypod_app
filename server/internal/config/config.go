@@ -18,6 +18,7 @@ type Config struct {
 
 	JWTSecretKey string
 	GeminiAPIKey string
+	GeminiModel  string
 
 	ServerPort string
 	GinMode    string
@@ -56,6 +57,7 @@ func LoadConfig() {
 
 		JWTSecretKey: getEnv("JWT_SECRET_KEY", "default_secret_key"),
 		GeminiAPIKey: getEnv("GEMINI_API_KEY", ""),
+		GeminiModel:  getEnv("GEMINI_MODEL", "gemini-2.5-pro"),
 
 		ServerPort: getEnv("SERVER_PORT", "8080"),
 		GinMode:    getEnv("GIN_MODE", "debug"),

@@ -3,6 +3,7 @@ package services
 import (
 	"context"
 	"fmt"
+	"os"
 	"time"
 
 	"github.com/xbossPhat/moneypod_app/server/internal/models"
@@ -89,7 +90,11 @@ VD: "Chi ăn uống tháng trước 1.5 triệu đồng (40%% tổng chi), hãy 
 	)
 
 	// 5. Gọi Gemini API
-	model := s.client.GenerativeModel("gemini-2.5-flash")
+	modelName := os.Getenv("GEMINI_MODEL")
+	if modelName == "" {
+		modelName = "gemini-3.8-flash"
+	}
+	model := s.client.GenerativeModel(modelName)
 	resp, err := model.GenerateContent(ctx, genai.Text(prompt))
 	if err != nil {
 		return "", fmt.Errorf("lỗi khi gọi Gemini API: %w", err)

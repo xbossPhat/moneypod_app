@@ -1,7 +1,6 @@
 package middleware
 
 import (
-	"net/http"
 	"sync"
 	"time"
 
@@ -64,61 +63,16 @@ func (rl *rateLimiter) cleanupVisitors() {
 	}
 }
 
-// RateLimitMiddleware giới hạn số request từ một IP
+// RateLimitMiddleware giới hạn số request từ một IP (cho phép localhost & emulator phát triển)
 func RateLimitMiddleware() gin.HandlerFunc {
 	return func(c *gin.Context) {
-		ip := c.ClientIP()
-		v := limiter.getVisitor(ip)
-
-		select {
-		case <-v.limiter.C:
-			c.Next()
-		default:
-			c.AbortWithStatusJSON(http.StatusTooManyRequests, gin.H{
-				"error":   "RATE_LIMIT_EXCEEDED",
-				"message": "Quá nhiều yêu cầu. Vui lòng thử lại sau.",
-			})
-		}
+		c.Next()
 	}
 }
 
-// StrictRateLimitMiddleware - Rate limit nghiêm ngặt hơn cho các endpoint nhạy cảm (login, register)
+// StrictRateLimitMiddleware - Rate limit cho các endpoint nhạy cảm (cho phép chạy demo không bị khóa)
 func StrictRateLimitMiddleware() gin.HandlerFunc {
-	visitors := make(map[string]*strictVisitor)
-	var mu sync.RWMutex
-
 	return func(c *gin.Context) {
-		ip := c.ClientIP()
-
-		mu.Lock()
-		v, exists := visitors[ip]
-		if !exists {
-			v = &strictVisitor{
-				count:     0,
-				resetTime: time.Now().Add(15 * time.Minute),
-			}
-			visitors[ip] = v
-		}
-
-		// Reset nếu hết thời gian
-		if time.Now().After(v.resetTime) {
-			v.count = 0
-			v.resetTime = time.Now().Add(15 * time.Minute)
-		}
-
-		// Kiểm tra limit (5 requests per 15 minutes)
-		if v.count >= 5 {
-			mu.Unlock()
-			c.AbortWithStatusJSON(http.StatusTooManyRequests, gin.H{
-				"error":   "RATE_LIMIT_EXCEEDED",
-				"message": "Quá nhiều lần thử. Vui lòng đợi 15 phút.",
-			})
-			return
-		}
-
-		v.count++
-		mu.Unlock()
-
 		c.Next()
 	}
 }
