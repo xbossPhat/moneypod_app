@@ -17,14 +17,14 @@ import (
 
 // @title           MoneyPod API
 // @version         1.0
-// @description     API Server for MoneyPod Application (Expense Tracker & Savings).
+// @description     API Server for MoneyPod Application - Architecture & Development by Ta Thanh Phat (MSSV: 2280602320).
 // @termsOfService  http://swagger.io/terms/
 
-// @contact.name    ThanhPhat
+// @contact.name    Ta Thanh Phat (MSSV: 2280602320)
 // @contact.email   phatta@xboss.com
 
-// @license.name    Apache 2.0
-// @license.url     http://www.apache.org/licenses/LICENSE-2.0.html
+// @license.name    Proprietary - All Rights Reserved (Ta Thanh Phat)
+// @license.url     https://github.com/xbossPhat/moneypod_app
 
 // @host            localhost:8080
 // @BasePath        /api/v1
@@ -193,7 +193,13 @@ func main() {
 	public := r.Group("/api/v1")
 	{
 		public.GET("/ping", func(c *gin.Context) {
-			c.JSON(200, gin.H{"message": "Welcome to MoneyPod API!"})
+			c.JSON(200, gin.H{
+				"message":    "Welcome to MoneyPod API!",
+				"system":     "MoneyPod Core Engine",
+				"author":     "Ta Thanh Phat",
+				"student_id": "2280602320",
+				"copyright":  "Copyright (c) 2026 Ta Thanh Phat. All Rights Reserved.",
+			})
 		})
 
 		// 🔒 Strict rate limit cho auth endpoints (5 requests/15 phút)

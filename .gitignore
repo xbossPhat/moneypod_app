@@ -34,3 +34,13 @@ Thumbs.db
 *.dll
 *.so
 *.dylib
+
+# Local reports & scratch files
+scratch/
+*.docx
+*.json.bak
+exact_36_pages.json
+real_pages.json
+KICH_BAN_DEMO_VA_CAM_NANG_DOI_CHAT_VOI_THAY.*
+dummy_receipt.png
+sample_bill_highlands.png

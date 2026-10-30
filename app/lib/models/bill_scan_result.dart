@@ -45,6 +45,22 @@ class BillScanResult extends Equatable {
       try {
         return DateTime.parse(date);
       } catch (e) {
+        // Fallback: Parse DD/MM/YYYY hoặc DD-MM-YYYY
+        try {
+          final delimiter = date.contains('/') ? '/' : (date.contains('-') ? '-' : null);
+          if (delimiter != null) {
+            final parts = date.split(delimiter);
+            if (parts.length == 3) {
+              if (parts[0].length == 4) {
+                // YYYY-MM-DD
+                return DateTime(int.parse(parts[0]), int.parse(parts[1]), int.parse(parts[2]));
+              } else {
+                // DD/MM/YYYY
+                return DateTime(int.parse(parts[2]), int.parse(parts[1]), int.parse(parts[0]));
+              }
+            }
+          }
+        } catch (_) {}
         return DateTime.now();
       }
     }

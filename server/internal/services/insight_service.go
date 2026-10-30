@@ -92,7 +92,7 @@ VD: "Chi ăn uống tháng trước 1.5 triệu đồng (40%% tổng chi), hãy 
 	// 5. Gọi Gemini API
 	modelName := os.Getenv("GEMINI_MODEL")
 	if modelName == "" {
-		modelName = "gemini-3.8-flash"
+		modelName = "gemini-1.5-flash"
 	}
 	model := s.client.GenerativeModel(modelName)
 	resp, err := model.GenerateContent(ctx, genai.Text(prompt))

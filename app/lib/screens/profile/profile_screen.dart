@@ -938,6 +938,31 @@ class _ProfileScreenState extends State<ProfileScreen> {
 
                 // Logout Button
                 _buildLogoutButton(),
+                const SizedBox(height: 24),
+
+                // Copyright Watermark
+                Center(
+                  child: Column(
+                    children: [
+                      Text(
+                        'MoneyPod v1.3.3',
+                        style: TextStyle(
+                          fontSize: 12,
+                          fontWeight: FontWeight.w600,
+                          color: AppColors.textMuted,
+                        ),
+                      ),
+                      const SizedBox(height: 4),
+                      Text(
+                        '© 2026 Tạ Thành Phát (2280602320). All Rights Reserved.',
+                        style: TextStyle(
+                          fontSize: 11,
+                          color: AppColors.textMuted.withValues(alpha: 0.7),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
                 const SizedBox(height: 40),
               ],
             ),
@@ -1138,7 +1163,23 @@ class _ProfileScreenState extends State<ProfileScreen> {
                 context: context,
                 applicationName: 'MoneyPod',
                 applicationVersion: '1.3.3',
-                applicationLegalese: '© 2024 MoneyPod Team',
+                applicationLegalese: '© 2026 Tạ Thành Phát (2280602320)\nĐại học HUTECH - All Rights Reserved.',
+                children: [
+                  const SizedBox(height: 14),
+                  const Text(
+                    'Tác giả & Chủ sở hữu: Tạ Thành Phát',
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
+                  ),
+                  const SizedBox(height: 4),
+                  const Text('MSSV: 2280602320 - Lớp: 22DTHD4'),
+                  const Text('Khoa Công nghệ Thông tin - Đại học HUTECH'),
+                  const Text('Giảng viên hướng dẫn: ThS. Trần Đăng Khoa'),
+                  const SizedBox(height: 10),
+                  const Text(
+                    'Toàn bộ mã nguồn, kiến trúc hệ thống và cơ sở dữ liệu thuộc quyền sở hữu trí tuệ của Tạ Thành Phát. Nghiêm cấm sao chép hoặc phân phối trái phép dưới mọi hình thức.',
+                    style: TextStyle(fontSize: 12, color: Colors.grey),
+                  ),
+                ],
               );
             },
           ),

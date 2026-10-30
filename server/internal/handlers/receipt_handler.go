@@ -23,7 +23,7 @@ func NewReceiptHandler(service *services.ReceiptService) *ReceiptHandler {
 // @Accept       multipart/form-data
 // @Produce      json
 // @Security     BearerAuth
-// @Param        images  formData  file  true  "File ảnh hóa đơn (key: images hoặc image)"
+// @Param        images  formData  file  true  "File ảnh hóa đơn (key: images, image, hoặc file)"
 // @Success      200  {object}  map[string]interface{} "Quét thành công"
 // @Failure      400  {object}  map[string]interface{} "Không nhận được file"
 // @Failure      500  {object}  map[string]interface{} "Lỗi xử lý AI"
@@ -36,14 +36,18 @@ func (h *ReceiptHandler) Scan(c *gin.Context) {
 		return
 	}
 
-	// 1. Nhận file từ Request (Key là "images" - hỗ trợ multi-file từ Flutter)
+	// 1. Nhận file từ Request (Key là "images", "image" hoặc "file" - hỗ trợ linh hoạt từ Flutter)
 	file, _, err := c.Request.FormFile("images")
 	if err != nil {
 		// Fallback thử key "image" nếu không tìm thấy "images"
 		file, _, err = c.Request.FormFile("image")
 		if err != nil {
-			c.JSON(http.StatusBadRequest, gin.H{"error": "Vui lòng gửi file ảnh với key là 'images' hoặc 'image'"})
-			return
+			// Fallback thử key "file" nếu client gửi "file"
+			file, _, err = c.Request.FormFile("file")
+			if err != nil {
+				c.JSON(http.StatusBadRequest, gin.H{"error": "Vui lòng gửi file ảnh với key là 'images', 'image' hoặc 'file'"})
+				return
+			}
 		}
 	}
 	defer file.Close()

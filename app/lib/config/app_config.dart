@@ -61,6 +61,11 @@ class AppConfig {
   /// Low balance threshold (VND)
   static const double lowBalanceThreshold = 100000.0;
 
+  /// Copyright & Author Identity
+  static const String appAuthor = 'Tạ Thành Phát';
+  static const String studentId = '2280602320';
+  static const String copyright = '© 2026 Tạ Thành Phát. All Rights Reserved.';
+
   /// Print config info (for debugging)
   static void printConfig() {
     debugPrint('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━');

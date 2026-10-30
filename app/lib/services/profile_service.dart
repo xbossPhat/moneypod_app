@@ -67,8 +67,7 @@ class ProfileService {
         data: form,
         options: Options(
           headers: {'Authorization': 'Bearer $token'},
-          contentType: 'multipart/form-data',
-        ),
+                  ),
       );
       debugPrint('Step 1 Success: ${uploadResp.data}');
 

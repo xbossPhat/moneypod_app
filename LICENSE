@@ -1,0 +1,39 @@
+BẢN QUYỀN VÀ THỎA THUẬN BẢO VỆ QUYỀN SỞ HỮU TRÍ TUỆ
+(PROPRIETARY LICENSE - ALL RIGHTS RESERVED)
+
+Bản quyền © 2026 Tạ Thành Phát. Tất cả các quyền được bảo lưu.
+Copyright (c) 2026 Ta Thanh Phat. All Rights Reserved.
+
+================================================================================
+THÔNG TIN TÁC GIẢ & CHỦ SỞ HỮU DUY NHẤT:
+- Họ và tên: TẠ THÀNH PHÁT
+- Mã số sinh viên (MSSV): 2280602320
+- Lớp: 22DTHD4
+- Khoa: Công nghệ Thông tin
+- Trường: Trường Đại học Công nghệ TP.HCM (HUTECH)
+- Môn học: Lập trình thiết bị di động (CMP177)
+- Giảng viên hướng dẫn: ThS. Trần Đăng Khoa
+- Tên đề tài: MoneyPod - Hệ thống Quản lý Tài chính Cá nhân và Chi tiêu Nhóm Thông minh
+================================================================================
+
+1. TUYÊN BỐ QUYỀN SỞ HỮU TÁC QUYỀN (INTELLECTUAL PROPERTY RIGHTS):
+Toàn bộ mã nguồn (source code bao gồm Backend Golang và Mobile Flutter), cơ sở dữ liệu,
+thiết kế kiến trúc hệ thống, tài liệu thiết kế và các thuật toán chia tiền, quét hóa đơn AI
+thuộc quyền sở hữu trí tuệ độc quyền của Tạ Thành Phát (MSSV: 2280602320).
+
+2. GIỚI HẠN MỤC ĐÍCH SỬ DỤNG (PERMITTED USE):
+Mã nguồn này được lưu trữ và hiển thị công khai trên GitHub DUY NHẤT cho hai mục đích:
+a) Phục vụ công tác kiểm tra, đối chiếu học thuật và chấm điểm kết thúc môn học CMP177 của Hội đồng Khoa và Giảng viên hướng dẫn tại Đại học HUTECH.
+b) Làm hồ sơ năng lực kỹ thuật (Portfolio cá nhân) của tác giả Tạ Thành Phát.
+
+3. ĐIỀU KHOẢN NGHIÊM CẤM (STRICT PROHIBITIONS):
+Nghiêm cấm tuyệt đối bất kỳ cá nhân, sinh viên, tổ chức nào thực hiện các hành vi sau:
+- Tải về (clone/download), chỉnh sửa, biên tập hoặc sao chép một phần hay toàn bộ mã nguồn này để nộp bài tập, đồ án, niên luận, khóa luận tại Đại học HUTECH hoặc bất kỳ cơ sở đào tạo nào.
+- Đổi tên tác giả, thay đổi thông tin nhận diện, làm sai lệch nguồn gốc xuất xứ của mã nguồn.
+- Tạo bản sao (fork) rồi đẩy lên các kho lưu trữ công cộng mà không có sự đồng ý bằng văn bản từ tác giả Tạ Thành Phát.
+- Thương mại hóa, phân phối, hoặc đóng gói ứng dụng lên Google Play Store / Apple App Store khi chưa được tác giả ủy quyền.
+
+4. BẰNG CHỨNG HỌC THUẬT VÀ XỬ LÝ VI PHẠM (ACADEMIC INTEGRITY & INFRINGEMENT):
+Mọi tệp tin trong hệ thống đều được tích hợp chữ ký tác quyền, lịch sử commit nguyên bản 
+trên Git từ tài khoản GitHub chính thức: https://github.com/xbossPhat, và các định danh ẩn trong API.
+Mọi hành vi đạo văn, sao chép trái phép sẽ lập tức được báo cáo lên Hội đồng Kỷ luật & Ban Thanh tra Học thuật của Nhà trường để xử lý theo Quy chế Đào tạo.

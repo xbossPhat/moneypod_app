@@ -434,12 +434,15 @@ class _VoiceAssistantScreenState extends State<VoiceAssistantScreen> {
           const SizedBox(height: 24),
 
           // Examples
-          Container(
-            padding: const EdgeInsets.all(16),
-            decoration: BoxDecoration(
-              color: AppColors.primary.withValues(alpha: 0.05),
-              borderRadius: BorderRadius.circular(12),
-            ),
+          InkWell(
+            onTap: () => _processCommand('Chi 50 nghìn ăn sáng'),
+            borderRadius: BorderRadius.circular(12),
+            child: Container(
+              padding: const EdgeInsets.all(16),
+              decoration: BoxDecoration(
+                color: AppColors.primary.withValues(alpha: 0.05),
+                borderRadius: BorderRadius.circular(12),
+              ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -473,6 +476,7 @@ class _VoiceAssistantScreenState extends State<VoiceAssistantScreen> {
                 ),
               ],
             ),
+          ),
           ),
           const SizedBox(height: 16),
         ],

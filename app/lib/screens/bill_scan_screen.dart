@@ -840,7 +840,8 @@ class _EditableBillCardState extends State<_EditableBillCard> {
           ],
         ),
         const SizedBox(height: 8),
-        DropdownButtonFormField<String>(
+        DropdownButtonFormField<String>(
+          isExpanded: true,
           initialValue: items.any((i) => i.value == value) ? value : null,
           items: items,
           onChanged: onChanged,

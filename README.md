@@ -1193,9 +1193,21 @@ This project is developed for educational purposes at **HUTECH University**.
 
 <div align="center">
   
+## ⚖️ Tác giả & Quyền sở hữu trí tuệ (Author & Copyright)
+
+* **Tác giả & Chủ sở hữu duy nhất:** **Tạ Thành Phát**
+* **Mã số sinh viên (MSSV):** 2280602320 - Lớp: 22DTHD4
+* **Trường:** Trường Đại học Công nghệ TP.HCM (HUTECH) - Khoa Công nghệ Thông tin
+* **Môn học:** Lập trình thiết bị di động (CMP177)
+* **Giảng viên hướng dẫn:** ThS. Trần Đăng Khoa
+* **Bản quyền:** Copyright © 2026 Tạ Thành Phát. **All Rights Reserved.**
+* **Tuyên bố bảo hộ:** Toàn bộ kiến trúc Backend (Golang), ứng dụng Mobile (Flutter), cơ sở dữ liệu và thuật toán thuộc quyền sở hữu trí tuệ của tác giả. Nghiêm cấm mọi hành vi sao chép, chỉnh sửa hoặc lấy cắp mã nguồn để nộp bài tại Đại học HUTECH và các cơ sở đào tạo khác.
+
+---
+
 ### 🌟 If you find this project helpful, please give it a star! 🌟
 
-**Built with ❤️ by ThanhPhat**
+**Built with ❤️ by Tạ Thành Phát (2280602320)**
 
 _Keywords: Golang, PostgreSQL, REST API, Clean Architecture, Flutter, Firebase, Backend Development, Expense Splitting Algorithm, Database Optimization, Async Processing_
 
